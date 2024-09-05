@@ -1,0 +1,19 @@
+[mysqld]
+
+# User
+user = root
+
+# Port
+port = 3306
+
+# Directory to store data
+datadir = /var/lib/mysql
+
+# Enable mariadb daemon to run
+# socket = /var/run/mysqld/mysqld.sock
+
+# Enable TCP/IP networking
+skip-networking = 0
+
+# Allow connections from any IP
+bind-address = 0.0.0.0
