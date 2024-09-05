@@ -6,7 +6,7 @@
 #    By: mguardia <mguardia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 17:02:51 by mguardia          #+#    #+#              #
-#    Updated: 2024/09/03 10:46:24 by mguardia         ###   ########.fr        #
+#    Updated: 2024/09/05 11:25:52 by mguardia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,13 @@ NC='\033[0m'
 # MAKEFILE RULES
 ###############################################################################
 
+all: hosts 
 
+hosts:
+	@echo -e "${YELLOW}Allowing execution on hosts script...${NC}"
+	sudo chmod +x ./srcs/requirements/tools/hosts.sh
+	@echo -e "${YELLOW}Starting execution...${NC}"
+	bash ./srcs/requirements/tools/hosts.sh ${USER_42}
 
 docker-clean:
 	@echo -e "${YELLOW}Allowing execution on docker-clean script...${NC}"
