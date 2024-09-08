@@ -24,6 +24,7 @@ name: inception
 services:
   mariadb:
     init: true
+    container_name: mariadb
     image: mariadb:42
     build:
       context: ./requirements/mariadb
@@ -32,24 +33,34 @@ services:
         - MYSQL_DATABASE
         - MYSQL_USER
         - MYSQL_USER_PASSWORD
-    container_name: mariadb
+    volumes:
+      - mariadb:/var/lib/mysql
     restart: always
     networks:
       - inception
-#   nginx:
-#     init: true
-#     build: ./requirements/nginx
-#     container_name: nginx
-#     restart: always
-#     ports:
-#       - "443:80"
-#     depends_on:
-#       - wordpress
-#     networks:
-#       - inception
-
+  nginx:
+    init: true
+    container_name: nginx
+    image: nginx:42
+    build:
+      context: ./requirements/nginx
+      args:
+        - DOMAIN_NAME
+        - CERT_KEY_PATH
+        - CERT_CRT_PATH
+    volumes:
+      - wordpress:/var/www/html
+    restart: always
+    networks:
+      - inception
+    ports:
+      - "443:443"
+    depends_on:
+      - wordpress
+      - mariadb
   wordpress:
     init: true
+    container_name: wordpress
     image: wordpress:42
     build: 
       context: ./requirements/wordpress
@@ -57,17 +68,32 @@ services:
         - MYSQL_DATABASE
         - MYSQL_USER
         - MYSQL_USER_PASSWORD
-
-    container_name: wordpress
+    volumes:
+      - wordpress:/var/www/html
     restart: always
-    depends_on:
-      - mariadb
     networks:
       - inception
+    depends_on:
+      - mariadb
 
-# volumes:
+volumes:
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/mguardia/data/mariadb
+      o: bind
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/mguardia/data/wordpress
+      o: bind
 
 
 networks:
   inception:
     name: inception
+    driver: bridge
