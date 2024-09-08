@@ -25,4 +25,4 @@ RUN     bash /usr/local/bin/setup_wordpress.sh
 EXPOSE  9000
 
 # Start php-fpm
-ENTRYPOINT [ "php-fpm7.4", "--nodaemonize" ]
+ENTRYPOINT [ "php-fpm7.4", "-F" ]

@@ -13,20 +13,20 @@ if [ -z "$1" ]; then
 fi
 
 # Assign first argument to USER
-USER=$1
+USER_42=$1
 
 # Check if domain already exists in /etc/hosts
 domain_exists() {
-    if ! grep -Pqx "127.0.0.1\t${USER}.42.fr" /etc/hosts; then
+    if ! grep -Pqx "127.0.0.1\t$USER_42.42.fr" /etc/hosts; then
         return 1
     fi
     return 0
 }
 
-# If domain does not exist, point localhost to ${USER}.42.fr
+# If domain does not exist, point localhost to ${USER_42}.42.fr
 if ! domain_exists ; then
     echo -e "${YELLOW}Domain not included in /etc/hosts. Proceding...${NC}"
-    sudo sed -i "2i\127.0.0.1\t${USER}.42.fr" /etc/hosts
+    sudo sed -i "2i\127.0.0.1\t$USER_42.42.fr" /etc/hosts
     echo -e "${GREEN}Domain included succesfully.${NC}"
 else
     echo -e "${YELLOW}Domain already exists in /etc/hosts.${NC}"
