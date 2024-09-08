@@ -1,0 +1,53 @@
+:root {
+	--bg-light: #ffffff;
+	--bg-dark: #111111;
+	--box-light: #f2f2f2;
+	--box-dark: #191919;
+	--title-light: #202020;
+	--title-dark: #EEEEEE;
+	--text-light: #646464;
+	--text-dark: #B4B4B4;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base { */
+
+	body {
+		overflow-x: hidden;
+		background-color: var(--bg-dark);
+	}
+/* } */
+  
+@layer utilities {
+	/* Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+  
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}
+
+@media (hover: hover) {
+	.animated-list:hover li {
+	  opacity: 0.5;
+	}
+  
+	.animated-list:hover li:hover {
+	  opacity: 1;
+	}
+}
+  
+.animate-in {
+animation-delay: calc(var(--index) * 130ms);
+}
+
+.overflow-x-scroll.snap-x::-webkit-scrollbar {
+/* hide scrollbars with webkit scrollbar */
+display: none;
+}

@@ -1,0 +1,148 @@
+{
+	"home": {
+	  "fullname": "Miguel Guardia",
+	  "logo": "/logo-white.svg",
+	  "fast_links": [
+		{
+		  "name": "LinkedIn",
+		  "url": "https://www.linkedin.com/in/miguel-guardia-sanchez/"
+		},
+		{
+			"name": "GitHub",
+			"url": "https://github.com/MGuardia10"
+		},
+		{
+			"name": "CV",
+			"url": "/cv.pdf"
+		}
+	  ],
+	  "image": "/links/mguardia.webp",
+	  "intro": "hey, Miguel here!",
+	  "summary": "I am a software engineer in constant learning and with a solid passion for technology and programming. I consider myself a proactive person, with great work ethic and good social skills.",
+	  "projects": [
+		{
+		  "name": "WebServ",
+		  "image": "/home/webserv.webp",
+		  "summary": "Creating my own HTTP web server with C++.",
+		  "url": ""
+		},
+		{
+		  "name": "Inception",
+		  "image": "/home/inception.webp",
+		  "summary": "Set up a small-medium infrastructure using Docker and Docker Compose.",
+		  "url": "https://github.com/MGuardia10/42cursus_inception"
+		},
+		{
+		  "name": "minishell",
+		  "image": "home/minishell.webp",
+		  "summary": "Recreating a shell in C using bash as a reference.",
+		  "url": "https://github.com/MGuardia10/42cursus_minishell"
+		},
+		{
+			"name": "FDF",
+			"image": "/home/fdf.webp",
+			"summary": "Representing a landscape as a 3D object in which all surfaces are outlined in lines.",
+			"url": "https://github.com/MGuardia10/42cursus_fdf"
+		}
+	  ]
+	},
+	"profiles": [
+	  {
+		"network": "Email",
+		"url": "mailto:mike.guardia0309@gmail.com"
+	  },
+	  {
+		"network": "LinkedIn",
+		"url": "https://www.linkedin.com/in/miguel-guardia-sanchez/"
+	  },
+	  {
+		"network": "GitHub",
+		"url": "https://github.com/MGuardia10"
+	  },
+	  {
+		"network": "42 Intra",
+		"url": "https://profile.intra.42.fr/users/mguardia"
+	  }
+	],
+	"about": {
+	  "photos": [
+		{
+			"image": "/about/littleme.webp",
+			"alt": "young me",
+			"caption": "little-me.jpg",
+			"date": "2003-10-27"
+		},
+		{
+			"image": "/about/madrid.webp",
+			"alt": "photo of madrid",
+			"caption": "madrid.jpg",
+			"date": "2014-07-30"
+		},
+		{
+			"image": "/about/me.webp",
+			"alt": "me",
+			"caption": "me.jpg",
+			"date": "2023-05-31"
+		},
+		{
+			"image": "/about/mac.webp",
+			"alt": "coding on my personal computer",
+			"caption": "coding.jpg",
+			"date": "2024-08-31"
+		}
+	  ],
+	  "bio": [
+		"Hi, I'm Miguel from Madrid, Spain. I have been coding since 2022. As a software engineer, I am most passionate about DevOps and Backend development, but I can do Frontend as well.",
+		"I started coding by myself until I got accepted on 42 Madrid, a software engineering school where I've learnt numerous specific technologies and software development fundamentals.",
+		"When I'm not at my desk, I am probably lifting weights, playing football or trying new food restaurants :]"
+	  ],
+	  "work_intro": "",
+	  "work": [
+		{
+		  "area": "",
+		  "company": "",
+		  "logo": "",
+		  "url": "",
+		  "date": "",
+		  "key": "1"
+		}
+	  ],
+	  "education_intro": "Right now I'm focused on learning cloud technologies and DevOps practices in a self-taught way.",
+	  "education": [
+		  {
+				"area": "Software Engineering",
+				"company": "42 Madrid - Telefónica",
+				"logo": "/about/42.webp",
+				"url": "https://www.42madrid.com/",
+				"date": "2023 - 2025",
+				"key": "1"
+			},
+			{
+				"area": "Cloud Architect Bootcamp",
+				"company": "Technological University",
+				"logo": "/about/techtitute.webp",
+				"url": "https://www.techtitute.com/",
+				"date": "2022 - 2023",
+				"key": "2"
+			},
+			{
+				"area": "Master Full Stack Dev",
+				"company": "Technological University",
+				"logo": "/about/techtitute.webp",
+				"url": "https://www.techtitute.com/",
+				"date": "2022 - 2023",
+				"key": "3"
+			}
+	  ],
+	  "certificates": [
+		{
+			"area": "GCP Associate Cloud Engineer",
+			"company": "Google Cloud",
+			"logo": "",
+			"date": "2021",
+			"url": "https://certificate.com"
+	  	}
+	]
+	}
+  }
+  

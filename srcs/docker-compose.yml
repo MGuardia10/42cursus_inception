@@ -38,6 +38,7 @@ services:
     restart: always
     networks:
       - inception
+
   nginx:
     init: true
     container_name: nginx
@@ -58,6 +59,7 @@ services:
     depends_on:
       - wordpress
       - mariadb
+
   wordpress:
     init: true
     container_name: wordpress
@@ -75,6 +77,18 @@ services:
       - inception
     depends_on:
       - mariadb
+  
+  static:
+    init: true
+    container_name: static
+    image: static:42
+    build:
+      context: ./requirements/bonus/static
+    restart: always
+    networks:
+      - inception
+    ports:
+      - "4173:4173"
 
 volumes:
   mariadb:
@@ -91,7 +105,6 @@ volumes:
       type: none
       device: /home/mguardia/data/wordpress
       o: bind
-
 
 networks:
   inception:
