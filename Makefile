@@ -6,7 +6,7 @@
 #    By: mguardia <mguardia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 17:02:51 by mguardia          #+#    #+#              #
-#    Updated: 2024/09/08 19:34:12 by mguardia         ###   ########.fr        #
+#    Updated: 2024/09/09 12:19:35 by mguardia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,10 @@ clean:
 	sudo chmod +x ./srcs/requirements/tools/docker-clean.sh
 	@echo -e "${YELLOW}Starting execution...${NC}"
 	bash ./srcs/requirements/tools/docker-clean.sh ${USER_42}
+
+clean-volumes:
+	@echo -e "${YELLOW}Removing local volumes directory.${NC}"
+	sudo rm -rf /home/$(USER)/data
 
 docker-install:
 	@echo -e "${YELLOW}Allowing execution on docker-install script...${NC}"

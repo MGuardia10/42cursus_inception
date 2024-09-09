@@ -31,10 +31,6 @@ while true; do
             sudo docker rmi -f $(sudo docker images -qa) 2> /dev/null;
             sudo docker volume rm $(sudo docker volume ls -q) 2> /dev/null;
             sudo docker network rm $(sudo docker network ls -q) 2> /dev/null;
-            
-            # Removing local volumes dir
-            echo -e "${YELLOW}Removing local volumes directory.${NC}"
-            sudo rm -rf /home/$USER/data
 
             # Removing host from /etc/hosts
             echo -e "${YELLOW}Removing host from /etc/hosts.${NC}"
