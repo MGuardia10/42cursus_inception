@@ -26,7 +26,9 @@ RUN     openssl req -x509 \
 RUN     sed -i "s/ssl_protocols.*/ssl_protocols TLSv1.2 TLSv1.3;/" /etc/nginx/nginx.conf
 
 # Copy and update nginx config files
+COPY    ./tools/init.sh /sbin/
 COPY    ./conf/https.conf /etc/nginx/conf.d/
+RUN     chmod +x /sbin/init.sh
 RUN     sed -i "s|DOMAIN_HERE|${DOMAIN_NAME}|g" etc/nginx/conf.d/https.conf
 RUN     sed -i "s|KEY_PATH_HERE|${CERT_KEY_PATH}|g" etc/nginx/conf.d/https.conf
 RUN     sed -i "s|CRT_PATH_HERE|${CERT_CRT_PATH}|g" etc/nginx/conf.d/https.conf
@@ -35,4 +37,4 @@ RUN     rm -rf /etc/nginx/sites-enabled/default
 # Expose port to host
 EXPOSE  443
 
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+ENTRYPOINT [ "./sbin/init.sh" ]
