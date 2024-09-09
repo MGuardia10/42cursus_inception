@@ -78,6 +78,7 @@ services:
     depends_on:
       - mariadb
   
+  # BONUS SERVICES
   static:
     init: true
     container_name: static
@@ -89,6 +90,23 @@ services:
       - inception
     ports:
       - "4173:4173"
+  
+  vsftpd:
+    container_name: vsftpd
+    image: vsftpd:42
+    build: ./requirements/bonus/vsftpd
+    env_file:
+      - .env
+    volumes:
+      - wordpress:/wordpress
+    restart: always
+    networks:
+      - inception
+    ports:
+      - "21:21"
+      - "21000-21100:21000-21100"
+    depends_on:
+      - wordpress
 
 volumes:
   mariadb:

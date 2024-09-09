@@ -9,8 +9,6 @@ RUN     curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 RUN     bash nodesource_setup.sh
 RUN     apt install -y nodejs
 RUN     npm install -g npm@latest
-# node -v should print `v20.17.0`
-# npm -v  should print `10.8.3+`
 
 # Create app directory
 RUN     mkdir -p /usr/local/src/app
