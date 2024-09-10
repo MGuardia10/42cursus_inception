@@ -22,20 +22,7 @@ have to use docker compose. You can see the subject [**HERE.**](https://github.c
 </details>
 
 <details>
-  <summary><strong>Services to set up:</strong></summary>
-  <br>
-  <ul>
-    <li>A Docker container that contains <strong>NGINX</strong> with TLSv1.2 or TLSv1.3 only.</li>
-    <li>A Docker container that contains <strong>WordPress + php-fpm</strong> (it must be installed and configured) only without nginx.</li>
-    <li>A Docker container that contains <strong>MariaDB</strong> only without nginx.</li>
-    <li>A volume that contains your <strong>WordPress database</strong>.</li>
-    <li>A second volume that contains your <strong>WordPress website</strong> files.</li>
-    <li>A <strong>docker-network</strong> that establishes the connection between your containers.</li>
-  </ul>
-</details>
-
-<details>
-  <summary><strong>Diagram of the expected result:</strong></summary>
+  <summary><strong>Diagram of the expected result for mandatory part:</strong></summary>
   <br>
   <ul>
     <img width="566" alt="diagram of expected result" src="https://github.com/user-attachments/assets/72388c94-a7b8-4b0b-ac4b-bf4ff060bef0">
@@ -49,6 +36,16 @@ have to use docker compose. You can see the subject [**HERE.**](https://github.c
     <img width="539" alt="Expected directory structure" src="https://github.com/user-attachments/assets/c4dabb84-23f6-4947-9650-9fe80375d747">
   </ul>
 </details>
+
+## Mandatory part
+
+List of services and volumes to set up for the mandatory part:
+- A Docker container that contains **NGINX** with TLSv1.2 or TLSv1.3 only.
+- A Docker container that contains **WordPress + php-fpm** (it must be installed and configured) only without nginx.
+- A Docker container that contains **MariaDB** only without nginx.
+- A volume that contains your **WordPress database**.
+- A second volume that contains your **WordPress website** files.
+- A **docker-network** that establishes the connection between your containers.
 
 ## Bonus Part
 A Dockerfile must be written for each extra service. Thus, each one of them will run inside its own container and will have, if necessary, its dedicated volume.
