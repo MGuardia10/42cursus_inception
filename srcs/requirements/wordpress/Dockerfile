@@ -24,5 +24,9 @@ RUN     bash /usr/local/bin/setup_wordpress.sh
 # Expose port to host
 EXPOSE  9000
 
+# Copy init script
+COPY    ./tools/init.sh /usr/local/bin/
+RUN     chmod +x /usr/local/bin/init.sh 
+
 # Start php-fpm
-ENTRYPOINT [ "php-fpm7.4", "-F" ]
+ENTRYPOINT [ "bash", "/usr/local/bin/init.sh" ]

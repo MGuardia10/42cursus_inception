@@ -25,3 +25,7 @@ sed -i "s/define( 'DB_NAME', '.*' );/define('DB_NAME', '$MYSQL_DATABASE' );/" /v
 sed -i "s/define( 'DB_USER', '.*' );/define('DB_USER', '$MYSQL_USER' );/" /var/www/html/wp-config.php
 sed -i "s/define( 'DB_PASSWORD', '.*' );/define('DB_PASSWORD', '$MYSQL_USER_PASSWORD' );/" /var/www/html/wp-config.php
 sed -i "s/define( 'DB_HOST', '.*' );/define('DB_HOST', 'mariadb' );/" /var/www/html/wp-config.php
+sed -i '/\/\* Add any custom values between this line and the "stop editing" line. \*\//a\
+define('"'"'WP_REDIS_HOST'"'"', '"'"'redis'"'"');\
+define('"'"'WP_REDIS_PORT'"'"', 6379);\
+define('"'"'WP_CACHE'"'"', true);' /var/www/html/wp-config.php

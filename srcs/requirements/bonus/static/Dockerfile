@@ -22,11 +22,13 @@ RUN     npm run build
 # Move dist to nginx directory
 RUN     cp -r /usr/local/src/app/dist /usr/share/nginx/html
 
-# Copy nginx config
+# Copy nginx config and init script
 COPY    ./conf/static.conf /etc/nginx/conf.d/
+COPY    ./tools/init.sh /usr/local/bin/
+RUN     chmod +x /usr/local/bin/init.sh
 
 # Expose port
 EXPOSE  4173
 
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+ENTRYPOINT [ "bash", "/usr/local/bin/init.sh" ]
 

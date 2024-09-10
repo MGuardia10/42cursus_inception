@@ -107,6 +107,15 @@ services:
       - "21000-21100:21000-21100"
     depends_on:
       - wordpress
+  
+  redis:
+    init: true
+    container_name: redis
+    image: redis:42
+    build: ./requirements/bonus/redis
+    restart: always
+    networks:
+      - inception
 
 volumes:
   mariadb:
