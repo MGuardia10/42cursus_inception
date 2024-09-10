@@ -31,6 +31,7 @@ services:
       args:
         - MYSQL_ROOT_PASSWORD
         - MYSQL_DATABASE
+        - GRAFANA_DATABASE
         - MYSQL_USER
         - MYSQL_USER_PASSWORD
     volumes:
@@ -70,6 +71,8 @@ services:
         - MYSQL_DATABASE
         - MYSQL_USER
         - MYSQL_USER_PASSWORD
+    env_file:
+      - .env
     volumes:
       - wordpress:/var/www/html
     restart: always
@@ -129,6 +132,24 @@ services:
       - inception
     depends_on:
       - wordpress
+    
+  grafana:
+    init: true
+    container_name: grafana
+    image: grafana:42
+    build: 
+      context: ./requirements/bonus/grafana
+      args:
+        - GRAFANA_DATABASE
+        - MYSQL_USER
+        - MYSQL_USER_PASSWORD
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - inception
+    depends_on:
+      - mariadb
 
 volumes:
   mariadb:
