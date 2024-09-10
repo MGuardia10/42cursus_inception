@@ -117,6 +117,19 @@ services:
     networks:
       - inception
 
+  adminer:
+    init: true
+    container_name: adminer
+    image: adminer:42
+    build: ./requirements/bonus/adminer
+    restart: always
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - inception
+    depends_on:
+      - wordpress
+
 volumes:
   mariadb:
     name: mariadb
