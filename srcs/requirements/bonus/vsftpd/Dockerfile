@@ -1,10 +1,6 @@
 FROM    alpine:3.18.3
 
-# Expose ports to host
-EXPOSE 21
-
 COPY    ./conf/vsftpd.conf /etc/vsftpd.conf
-# COPY    ./conf/vsftpd.conf /etc/vsftpd/vsftpd.conf
 
 # Updating system and install vsftpd
 RUN     apk update && apk add vsftpd

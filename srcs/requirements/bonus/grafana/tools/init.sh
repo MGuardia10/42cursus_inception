@@ -12,5 +12,5 @@ while true; do
   sleep 1
 done
 
-echo "Running grafana..."
+echo "Starting grafana..."
 grafana-server --homepath=/usr/share/grafana --config=/etc/grafana/grafana.ini > /dev/null

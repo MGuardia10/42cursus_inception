@@ -21,9 +21,6 @@ RUN     mkdir -p /run/php/ && \
 COPY    ./tools/setup_wordpress.sh /usr/local/bin/
 RUN     bash /usr/local/bin/setup_wordpress.sh
 
-# Expose port to host
-EXPOSE  9000
-
 # Copy init script
 COPY    ./tools/init.sh /usr/local/bin/
 RUN     chmod +x /usr/local/bin/init.sh 

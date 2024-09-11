@@ -17,6 +17,6 @@ RUN     sed -i "s|PASSWORD_HERE|${MYSQL_USER_PASSWORD}|g" /etc/grafana/grafana.i
 COPY    ./tools/init.sh /usr/local/bin/
 RUN     chmod +x /usr/local/bin/init.sh
 
-EXPOSE 3000
+# EXPOSE 3000
 
 ENTRYPOINT [ "./usr/local/bin/init.sh" ]

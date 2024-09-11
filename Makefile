@@ -6,7 +6,7 @@
 #    By: mguardia <mguardia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 17:02:51 by mguardia          #+#    #+#              #
-#    Updated: 2024/09/09 12:19:35 by mguardia         ###   ########.fr        #
+#    Updated: 2024/09/11 16:11:16 by mguardia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,15 @@ NC='\033[0m'
 ###############################################################################
 
 all: hosts $(VOLUME) up
+	@echo ""
+	@echo "${GREEN}############################################################${NC}"
+	@echo ""
+	@echo "Worpress running at ${YELLOW}https://$(USER_42).42.fr:443${NC}"
+	@echo "Adminer running at ${YELLOW}https://$(USER_42).42.fr:443/adminer${NC}"
+	@echo "Grafana running at ${YELLOW}https://$(USER_42).42.fr:443/grafana${NC}"
+	@echo "Static Website running at ${YELLOW}http://$(USER_42).42.fr:4173${NC}"
+	@echo ""
+	@echo "${GREEN}############################################################${NC}"
 
 hosts:
 	@echo -e "${YELLOW}Allowing execution on hosts script...${NC}"
@@ -48,7 +57,7 @@ $(VOLUME):
 
 up:
 	@echo -e "${YELLOW}Starting containers...${NC}"
-	sudo docker compose -f ${COMPOSE_FILE} up --build
+	sudo docker compose -f ${COMPOSE_FILE} up -d --build
 
 down:
 	@echo -e "${YELLOW}Stopping containers...${NC}"
