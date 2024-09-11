@@ -51,39 +51,12 @@ List of services and volumes to set up for the mandatory part:
 A Dockerfile must be written for each extra service. Thus, each one of them will run inside its own container and will have, if necessary, its dedicated volume.
 
 Bonus list:
-- Set up redis cache for your WordPress website in order to properly manage the
+- Set up **redis cache** for your WordPress website in order to properly manage the
 cache.
-- Set up a FTP server container pointing to the volume of your WordPress website.
-- Create a simple static website in the language of your choice except PHP. For example, a showcase site or a site for presenting your resume.
-- Set up Adminer.
-- Set up a service of your choice that you think is useful. During the defense, you will have to justify your choice.
-
-<!--
-
-## Installing and running the project:
-
-> ℹ️ This project is done using [Codam MLX library](https://github.com/codam-coding-college/MLX42). If something MLX related is not working on your computer, make sure to check their documentation.
-
-1- Clone this repository
-	
-	git clone https://github.com/MGuardia10/42cursus_cub3d.git
-2- Navigate to the new directory and run `make`
-	
-	cd 42cursus_cub3d
-   	make
-3- Execute cub3D binary with a map of your choice, for example:
-
-	./cub3d maps/valid/map6.cub
-
-## Compiling the Program
-The Inception program comes with a Makefile that includes the following rules:
-
-- `all`: compiles the program.
-- `re`: recompiles the program.
-- `clean`: removes obj directory with objects files.
-- `fclean`: removes obj directory with objects files and inception binary.
-
--->
+- Set up a **FTP server** container pointing to the volume of your WordPress website.
+- Create a simple **static website** in the language of your choice except PHP. For example, a showcase site or a site for presenting your resume.
+- Set up **Adminer**.
+- Set up a service of your choice that you think is useful. I am using **Grafana**.
 
 ## Disclaimer
 > At [42School](https://en.wikipedia.org/wiki/42_(school)), almost every project must be written in accordance to the [Norm](https://github.com/MGuardia10/42cursus/blob/main/subjects/en/norm_en.pdf), the school's coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
