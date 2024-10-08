@@ -7,7 +7,7 @@ fi
 
 if [ ! -f "/var/www/html/adminer.php" ]; then
     mkdir -p /var/www/html/
-    wget -q http://www.adminer.org/latest.php -O /var/www/html/adminer.php
+    wget -q https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php -O /var/www/html/adminer.php
     chown www-data:www-data /var/www/html/adminer.php
     chmod 644 /var/www/html/adminer.php
 fi
